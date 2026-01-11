@@ -38,7 +38,20 @@ In der Datei `3D_Berechnung.xlsx` können Sie vorab kalkulieren, wie viel Filame
 
 
 **Informationen zum Filament:**
-Lebensmittelechtes Filament ...
+Bei dem verwendeten Filament handelt es sich um lebensmittelechtes PET-G von Extrudr. Weitere Informationen zum Filament finden Sie hier: [Extrudr PET-G](https://www.extrudr.com/de/de/products/petg/).
+
+Es sei noch darauf hingewiesen, dass PET-G im Vergleich zu PLA eine höhere Drucktemperatur benötigt und die Druckbetttemperatur ebenfalls höher eingestellt werden muss.
+
+Anstelle des PET-G der Firma Extrudr kann auch anderes lebensmittelechtes PET-G Filament verwendet werden. Es sollte jedoch auf entsprechende Zertifikate und Angaben des Herstellers geachtet werden, um sicherzustellen, dass das Filament für den Kontakt mit Lebensmitteln geeignet ist. 
+
+Falls Sie sich mit dem Thema lebensmittelechtes Filament näher beschäftigen möchten, finden Sie hier einige weitere Informationen: 
+- [Leitfaden für den lebensmittelechten 3D-Druck](https://formlabs.com/de/blog/leitfaden-lebensmittelechtheit-3d-druck/)
+- [FDA-Bestimmungen CFR 21](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm)
+- [EU-Richtlinien 10/2011](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32011R0010)
+
+
+
+
 
 ## Montage
 (später erst)
