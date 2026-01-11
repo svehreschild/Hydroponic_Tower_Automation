@@ -1,6 +1,9 @@
 # Hydroponic_Tower_Automation
 Hier finden Sie eine detaillierte Anleitung, um einen modularen Hydroponikturm zu automatisieren. Die Anleitung enthält einen Schaltplan, den Code der Software, eine Liste der benötigten Materialien und eine Schritt-für-Schritt-Anleitung.
 
+TODO:
+![Bild-Übersicht](pictures/overview.jpg)
+
 ## 3D-Druck
 **Grundaufbau:** 
 Zunächst werden die benötigten, modularen Komponenten für den Hydroponikturm mit einem 3D-Drucker gedruckt. Als Basis für unser Projekt haben wir die Designs von Luitzor verwendet, die unter der folgenden URL verfügbar sind: [Luitzor's Hydroponic Tower Designs](https://www.thingiverse.com/thing:5712775). Wir empfehlen, diese Designs als Ausgangspunkt zu verwenden, da sie bereits sehr gut durchdacht, modular und funktional erweiterbar sind.
@@ -77,11 +80,13 @@ Sie benötigen außerdem noch folgendes Zubehör:
 - Kabelbinder
 - Kabel
 
-Anhand des [Schaltplan](Schaltplan.pdf) können Sie die Verdrahtung der einzelnen Komponenten nachvollziehen. 
-
+Anhand des [Schaltplan](Schaltplan.pdf) können Sie die Verdrahtung der einzelnen Komponenten nachvollziehen:
+![Schaltplan](pictures/Schaltplan.png)
 
 ## Zusätzliches Zubehör
-Um dem Hydroponikturm eine stabile und wasserdichte Basis zu geben, empfehlen wir die Verwendung eines passenden Eimers. In unserem Fall haben wir (anders als im Originaldesign von Luitzor) einen entsprechenden Eimer im Baumarkt mit einem Durchmesser von (TODO: Durchmesser einfügen) cm gekauft, der sich mit einem gekauften Dichtungsband für Fenster und Türen abdichten lässt.
+Um dem Hydroponikturm eine stabile und wasserdichte Basis zu geben, empfehlen wir die Verwendung eines passenden Eimers. In unserem Fall haben wir (anders als im Originaldesign von Luitzor) einen entsprechenden Eimer im Baumarkt mit einem Durchmesser von (TODO: Durchmesser einfügen) cm gekauft, der sich mit einem gekauften Dichtungsband für Fenster und Türen,  welches in den Deckel eingeklebt wird, abdichten lässt.
+
+![Deckel](pictures/Deckel.png)
 
 
 ## Software
@@ -93,7 +98,7 @@ Die Software ist so konzipiert, dass sie die folgenden Funktionen erfüllt:
 - Steuerung der Pumpe basierend auf manuellen Eingaben und voreingestellten Zeitintervallen
 - Alarmierung bei niedrigem Wasserstand und Verhindern des Pumpenbetriebs in diesem Fall
 
-Sollten Sie andere Zeitintervalle oder zusätzliche Funktionen benötigen, können Sie den Quellcode entsprechend anpassen.
+Sollten Sie andere Zeitintervalle, Bewässerungsdauern oder zusätzliche Funktionen benötigen, können Sie den Quellcode entsprechend anpassen.
 
 Damit der Code kompiliert werden kann, benötigen Sie die folgenden Bibliotheken, die Sie über den Bibliotheksverwalter der Arduino IDE installieren können:
 - RTClib von Adafruit (bei uns Version 2.1.4)
@@ -105,25 +110,83 @@ Spielen Sie den Code auf Ihren Arduino Nano, während Sie die Verdrahtung mit de
 ## Montage
 Beginnen Sie mit dem Zusammenbau der 3D-gedruckten Komponenten gemäß der Anleitung von [Luitzor](https://www.thingiverse.com/thing:5712775). Dies sollte sehr intuitiv sein. 
 
+TODO:
+![Bild einer Modulgruppe](pictures/modulgruppe.jpg)
+
+
+TODO:
+![Bestückung des Deckels](pictures/deckel_bestückt.jpg)
+
+Führen Sie den Wasserschlauch durch die dafür vorgesehen runden Ausschnitte in den Modulen, die den Wasserschlauch mittig im Turm fixieren. Verbinden Sie den Schlauch mit der Pumpe und dem Pumpenanschluss im Dispenser-Modul.
+
+TODO:
+![Foto Dispenser-Modul mit Schlauch](pictures/deckel_bestückt.jpg)
+
+
 In den Eimer wird ein entsprechendes Loch für den Wasserstandsensor gebohrt, der dann von außen in den Eimer eingesetzt und mit einer Mutter befestigt wird. Achten Sie darauf, dass der Sensor wasserdicht im Eimer sitzt, damit kein Wasser austreten kann.
+
+![Loch im Eimer](pictures/Loch_Eimer.png)
+
 
 Anschließend erhitzen sie vier M (TODO:) Einschmelzgewinde und setzen diese in das Gehäuse zur Befestigung des Deckels ein.
 Außerdem verkleben sie die Hauptplatinenhalterung und den DHT22 im Gehäuse mit einem geeigneten Kleber (z.B. Zweikomponentenkleber). Die Platinenhalterung für das Relaismodul wird lediglich mit (TODO:) Schrauben befestigt. Das RTC-Modul wird dem Gehäuse an dem dafür vorgesehenen Platz mit (TODO:) Schrauben angebracht. In den Deckel des Gehäuses wird das Display mit (TODO:) Schrauben befestigt.
 Den Taster zum aktivieren des manuellen Pumpenbetriebs können Sie an der Vorderseite des Gehäuses in dem entsprechenden Ausschnitt anbringen.
 
-Im Anschluss verlöten Sie die Elektronikkomponenten gemäß dem [Schaltplan](Schaltplan.pdf). 
+
+
+TODO: ggf hier mehr Bilder einfügen
+![](pictures/...)
+
+Im Anschluss verlöten Sie die Elektronikkomponenten gemäß dem [Schaltplan](Schaltplan.pdf) auf ihrer Platine.
+![Hauptplatine](pictures/Main_Platine.png)
+
+Sinnvoll ist es die Verbindungen zu den einzelnen Komponenten über Schraubverbindungen herzustellen, damit diese bei Bedarf einfach getauscht werden können. Achten Sie darauf, dass die Kabel ausreichend lang sind, um alle Komponenten zu erreichen.
+
+![Hauptplatine mit Verkabelung](pictures/Kabel_angeschlossen.jpg)
+
+Bevor die Pumpe in den Eimer eingesetzt wird, wird sie mit einem Stück Fliegengitter vor Verunreinigungen geschützt. Das Fliegengitter wird mit einem Kabelbinder an der Pumpe befestigt. 
+
+![Pumpe mit Fliegengitter](pictures/Pumpe_mit_Fliegengitter.png)
+
+
+Anschließend wird die Pumpe durch den dafür vorgesehenen Ausschnitt im Deckel des Eimers eingesetzt und mit der Platine entsprechend des Schaltplans verbunden.
+
+TODO:
+![Vollständige Verkabelung](pictures/vollstaendige_verkabelung.jpg)
 
 Nun können sie das Elektronikgehäuse mit (TODO:) Schrauben verschließen (Deckel und Gehäuse verbinden) und das Gehäuse auf dem Eimer mit (TODO:) Schrauben befestigen.
 
+
 ## Anzüchten von Pflanzen
-...
+In dem Verlauf unseres Projektes haben wir diverse Pflanzen erfolgreich angezüchtet um diese anschließend in den Hydroponikturm zu setzen. 
+
+Allgemein wird zwischen Hell- und Dunkelkeimern unterschieden. Dementsprechend sollten Sie sich vorab informieren, ob die von Ihnen gewünschten Pflanzen Hell- oder Dunkelkeimer sind, um die Keimbedingungen entsprechend anzupassen.
+
+Eine Möglichkeit ist es, die Samen in feuchtem Küchenpapier oder Watte anzuzüchten. Legen Sie die Samen dazu zwischen zwei feuchte Lagen und halten Sie diese stets feucht. Achten Sie darauf, dass die Samen nicht zu nass liegen, da sie sonst faulen können. Stellen Sie die Samen an einen warmen Ort mit ausreichend Licht (je nach Keimertyp) und warten Sie, bis die Samen keimen. 
+
+![Keimlinge im Küchenpapier](pictures/Keimen_Kuechenpapier.png)
+
+Nach dem Keimen können die kleinen Pflanzen vorsichtig befeuchtete Steinwollwürfel, die in die Pods des Hydroponikturms eingesetzt werden, gepflanzt werden. Achten Sie darauf, die Wurzeln nicht zu beschädigen und die Pflanzen vorsichtig in die Steinwolle zu setzen. 
+
+TODO:
+![Steinwolle und Pods](pictures/)
+
+
+Eine weitere Möglichkeit ist die Anzucht der Pflanzen direkt in den (herausgenommenen) Pods des Hydroponikturms. Füllen Sie die Pods dazu mit feuchter Steinwolle pflanzen Sie die Samen direkt hinein. Halten Sie das Substrat stets feucht und stellen Sie die Pods an einen warmen Ort mit ausreichend Licht (je nach Keimertyp).
+
+TODO:
+![Steinwolle und Pods](pictures/)
 
 
 ## Inbetriebnahme
-Füllen Sie den Eimer mit Wasser auf und setzen Sie die Pumpe in das Wasser (durch das entsprechende Loch im Deckel des Eimers). Verbinden Sie die Pumpe mit dem Pumpenkabel, das durch das Pumpenloch im Deckel geführt wird.
-Schließen Sie die Stromversorgung an das Gehäuse an. Das Display sollte nun aufleuchten und die aktuellen Messwerte anzeigen.
+Schließen Sie die Stromversorgung an das Gehäuse an. Das Display sollte nun aufleuchten und die aktuellen Messwerte anzeigen, sowie eine Meldung, dass der Wasserstand niedrig ist.
+Füllen Sie den Eimer mit Wasser auf. Die Wasserstandsanzeige auf dem Display sollte sich entsprechend aktualisieren.
+Stellen sie sicher, dass die Pumpe korrekt mit dem Wasserschlauch verbunden ist, der in den Hydroponikturm führt und der Turm keinerlei Undichtigkeiten aufweist.
 Drücken Sie den Taster, um die Pumpe manuell zu starten. Überprüfen Sie, ob die Pumpe ordnungsgemäß funktioniert und Wasser durch den Hydroponikturm pumpt.
+
 Füllen Sie die Pflanzmodule mit den gewünschten Pflanzen und setzen Sie diese in den Hydroponikturm ein.
+
+Ihr neues automatisiertes Hydroponiksystem ist nun betriebsbereit! Wir wünschen Ihnen viel Erfolg und Freude beim Anbau Ihrer Pflanzen und selbstverständlich auch beim den ersten erfolgreichen Ernten.
 
 
 
