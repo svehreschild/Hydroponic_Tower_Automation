@@ -115,11 +115,18 @@ Im Anschluss verlöten Sie die Elektronikkomponenten gemäß dem [Schaltplan](Sc
 
 Nun können sie das Elektronikgehäuse mit (TODO:) Schrauben verschließen (Deckel und Gehäuse verbinden) und das Gehäuse auf dem Eimer mit (TODO:) Schrauben befestigen.
 
+## Anzüchten von Pflanzen
+...
+
+
 ## Inbetriebnahme
 Füllen Sie den Eimer mit Wasser auf und setzen Sie die Pumpe in das Wasser (durch das entsprechende Loch im Deckel des Eimers). Verbinden Sie die Pumpe mit dem Pumpenkabel, das durch das Pumpenloch im Deckel geführt wird.
 Schließen Sie die Stromversorgung an das Gehäuse an. Das Display sollte nun aufleuchten und die aktuellen Messwerte anzeigen.
 Drücken Sie den Taster, um die Pumpe manuell zu starten. Überprüfen Sie, ob die Pumpe ordnungsgemäß funktioniert und Wasser durch den Hydroponikturm pumpt.
 Füllen Sie die Pflanzmodule mit den gewünschten Pflanzen und setzen Sie diese in den Hydroponikturm ein.
+
+
+
 
 
 ## Warnungen
