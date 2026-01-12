@@ -176,14 +176,23 @@ Anschließend wird die Pumpe durch den dafür vorgesehenen Ausschnitt im Deckel 
 
 ![Pumpe eingesetzt](pictures/Pumpe_eingesetzt.jpeg)
 
+Im Anschluss wird nun die finale Feinschliff der Verkabelung durchgeführt. Die Kabel sollten so verlegt werden, dass sie nicht im Weg sind und anschließend vorsichtig mit Kabelbindern fixiert und gebündelt werden. 
+Sie können überschüssige Kabellängen kürzen oder aufrollen, um eine ordentliche Verkabelung zu gewährleisten.
+Achten Sie darauf, dass keine Kabel gequetscht werden könnten, wenn die Kabelbinder zu fest angezogen werden.
 
+![Vollständige Verkabelung](pictures/Vollstaendige_Verkabelung.jpeg)
 
-und die Kabel anschließen mit Kabelbindern zu organisieren, um ein Durcheinander zu vermeiden.
+Nun können sie das Elektronikgehäuse mit vier M3 Senkkopfschrauben (empfohlene Länge 10mm) verschließen (Deckel und Gehäuse verbinden).
+Achten Sie darauf, dass keine Kabel gequetscht werden, wenn das Gehäuse geschlossen wird.
 
-TODO:
-![Vollständige Verkabelung](pictures/vollstaendige_verkabelung.jpg)
+![Gehäuse und Gehäusedeckel](pictures/Gehause_und_Gehausedeckel.jpeg)
 
-Nun können sie das Elektronikgehäuse mit (TODO:) Schrauben verschließen (Deckel und Gehäuse verbinden) und das Gehäuse auf dem Eimer mit (TODO:) Schrauben befestigen.
+Im Anschluss wird das verschlossene Gehäuse auf dem Eimer mit zwei M3 (empfohlene Länge 15mm) Schrauben, sowie zwei M3 Muttern befestigt. Idealerweise sollten sie Karosseriescheiben verwenden, um eine bessere Lastverteilung auf dem Langloch des Gehäuses zu gewährleisten und bei der Befestigung zwei weitere Muttern verwenden und die gegeneinander festzuziehen, um ein Lösen der Schrauben zu verhindern.
+
+Sicht von oben:
+![verschlossenes Gehäuse auf Eimer, Sicht von Oben](pictures/Schrauben_Gehause_an_Deckel_oben.jpeg)
+Sicht von unten:
+![verschlossenes Gehäuse auf Eimer, Sicht von Unten](pictures/Schrauben_Gehause_an_Deckel_unten.jpeg)
 
 
 ## Anzüchten von Pflanzen
