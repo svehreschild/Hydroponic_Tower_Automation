@@ -29,6 +29,12 @@ Mindestens sollten die folgenden Komponenten gedruckt werden:
 
 Soll der Turm mehrere Ebenen haben, wozu wir raten, müssten sie pro Ebene einmal `4-Way_Planting_Module_Hollow_Twist.STL`, viermal `Standard_Pot_02_For_4-5-Way_Planting_Module.STL` und einmal `Module_Spacer_40mm.STL` drucken. Der Abstandhalter `Module_Spacer_40mm.STL` ist nicht zwingend notwendig, aber wir empfehlen ihn, um den Pflanzen mehr Platz zum Wachsen zu geben. Außerdem empfehlen wir mehrere Pflanzenpods `Standard_Pot_02_For_4-5-Way_Planting_Module.STL`, als Reserve zu drucken, falls eine Pflanze nicht gedeiht oder ersetzt werden muss.
 
+Bei der Kombination der Abdeckkappen und der zugehörigen Symbole empfehlen wir, die Symbole mit einem Kleber auf die Kappen zu kleben oder mit einem Drucker, der über ein AMS (Automatisches Materialwechselsystem) verfügt, die Symbole in einer anderen Farbe zu drucken, um eine bessere Sichtbarkeit zu gewährleisten.
+
+![Gedruckte Symbole in Abdeckkappen](pictures/Abdeckkappen.png)
+
+
+
 **Unsere 3D Files**:
 Zur sicheren Unterbringung der Elektronik, haben wir ein Gehäuse und Platinenhalterungen designed. Diese Dateien finden Sie im Ordner `3D_Designs`. Sie benötigen die folgenden Dateien jeweils einmal:
 - Vertical_Gardening_Housing.stl
@@ -84,7 +90,8 @@ Anhand des [Schaltplan](Schaltplan.pdf) können Sie die Verdrahtung der einzelne
 ![Schaltplan](pictures/Schaltplan.png)
 
 ## Zusätzliches Zubehör
-Um dem Hydroponikturm eine stabile und wasserdichte Basis zu geben, empfehlen wir die Verwendung eines passenden Eimers. In unserem Fall haben wir (anders als im Originaldesign von Luitzor) einen entsprechenden Eimer im Baumarkt mit einem Durchmesser von (TODO: Durchmesser einfügen) cm gekauft, der sich mit einem gekauften Dichtungsband für Fenster und Türen,  welches in den Deckel eingeklebt wird, abdichten lässt.
+Um dem Hydroponikturm eine stabile und wasserdichte Basis zu geben, empfehlen wir die Verwendung eines passenden Eimers. In unserem Fall haben wir (anders als im Originaldesign von Luitzor) einen entsprechenden Eimer im Baumarkt mit einem Außendurchmesser von 21,5cm gekauft, der sich mit einem gekauften Dichtungsband für Fenster und Türen, welches in den Deckel eingeklebt wird, abdichten lässt.
+Der (auf 75% skalierte) Deckel des Eimers hat einen Innendurchmesser von ca. 22cm, daher sollte der Eimer einen Außendurchmesser haben, der etwas kleiner ist, damit der Deckel auf den Eimer passt.
 
 ![Deckel](pictures/Deckel.png)
 
@@ -110,18 +117,24 @@ Spielen Sie den Code auf Ihren Arduino Nano, während Sie die Verdrahtung mit de
 ## Montage
 Beginnen Sie mit dem Zusammenbau der 3D-gedruckten Komponenten gemäß der Anleitung von [Luitzor](https://www.thingiverse.com/thing:5712775). Dies sollte sehr intuitiv sein. 
 
-TODO:
-![Bild einer Modulgruppe](pictures/modulgruppe.jpg)
+Bauen sie jeweils eine Baugruppe aus einem 4-Wege-Pflanzenmodul, vier Pflanzenpods und einem Abstandhalter zusammen. Wiederholen Sie diesen Schritt für die gewünschte Anzahl an Etagen. Nun beginnen Sie mit dem Dispenser-Modul, an das nun der Wasserschlauch angeschlossen wird.
+
+![Foto Dispenser-Modul mit Schlauch](pictures/Diffusor_Schlauch.png)
+
+Im Anschluss nehmen Sie die zuvor erstellten Baugruppen und stapeln diese auf das Dispenser-Modul. Der Wasserschlauch wird durch die runden Ausschnitte in allen Modulen hindurchgeführt.  
+
+![Modulgruppe mit Schlauch1](pictures/Schlauch_durch_Loch.png)
+
+![Modulgruppe mit Schlauch2](pictures/Modulgruppe_mit_Schlauch.png)
+
+Achten Sie darauf, dass die Module korrekt ausgerichtet sind, damit die Pflanzenpods später nicht direkt untereinander, sondern um 45 Grad versetzt, eingesetzt werden können.
+
+![Modulgruppen um 45 Grad versetzt](pictures/Modulgruppen_versetzt.png)
 
 
-TODO:
-![Bestückung des Deckels](pictures/deckel_bestückt.jpg)
+Der Deckel des Eimers wird auch bestückt. Dieser beinhaltet die Abdeckungen für die Pumpe und die Einfüllöffnung für Wasser. In der Mitte des Deckels wird der Turm eingesetzt.
 
-Führen Sie den Wasserschlauch durch die dafür vorgesehen runden Ausschnitte in den Modulen, die den Wasserschlauch mittig im Turm fixieren. Verbinden Sie den Schlauch mit der Pumpe und dem Pumpenanschluss im Dispenser-Modul.
-
-TODO:
-![Foto Dispenser-Modul mit Schlauch](pictures/deckel_bestückt.jpg)
-
+![Bestückung des Deckels](pictures/Deckel_montieren.jpeg)
 
 In den Eimer wird ein entsprechendes Loch für den Wasserstandsensor gebohrt, der dann von außen in den Eimer eingesetzt und mit einer Mutter befestigt wird. Achten Sie darauf, dass der Sensor wasserdicht im Eimer sitzt, damit kein Wasser austreten kann.
 
@@ -168,14 +181,14 @@ Eine Möglichkeit ist es, die Samen in feuchtem Küchenpapier oder Watte anzuzü
 
 Nach dem Keimen können die kleinen Pflanzen vorsichtig befeuchtete Steinwollwürfel, die in die Pods des Hydroponikturms eingesetzt werden, gepflanzt werden. Achten Sie darauf, die Wurzeln nicht zu beschädigen und die Pflanzen vorsichtig in die Steinwolle zu setzen. 
 
-TODO:
-![Steinwolle und Pods](pictures/)
+
+![Steinwolle und Pods](pictures/Steinwolle_Pod.jpeg)
+
+
+![Steinwolle und Pods](pictures/Keimling_in_Pod.jpeg)
 
 
 Eine weitere Möglichkeit ist die Anzucht der Pflanzen direkt in den (herausgenommenen) Pods des Hydroponikturms. Füllen Sie die Pods dazu mit feuchter Steinwolle pflanzen Sie die Samen direkt hinein. Halten Sie das Substrat stets feucht und stellen Sie die Pods an einen warmen Ort mit ausreichend Licht (je nach Keimertyp).
-
-TODO:
-![Steinwolle und Pods](pictures/)
 
 
 ## Inbetriebnahme
