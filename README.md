@@ -217,6 +217,9 @@ Nach dem Keimen können die kleinen Pflanzen vorsichtig befeuchtete Steinwollwü
 
 Eine weitere Möglichkeit ist die Anzucht der Pflanzen direkt in den (herausgenommenen) Pods des Hydroponikturms. Füllen Sie die Pods dazu mit feuchter Steinwolle pflanzen Sie die Samen direkt hinein. Halten Sie das Substrat stets feucht und stellen Sie die Pods an einen warmen Ort mit ausreichend Licht (je nach Keimertyp).
 
+Beachten Sie außerdem, dass einige Pflanzen spezielle Anforderungen an die Nährlösungen, den pH-Wert des Wassers und die Lichteinstrahlung haben. Informieren Sie sich daher vorab über die Bedürfnisse der von Ihnen gewünschten Pflanzen, um optimale Wachstumsbedingungen zu gewährleisten.
+
+
 
 ## Inbetriebnahme
 Schließen Sie die Stromversorgung an das Gehäuse an. Das Display sollte nun aufleuchten und die aktuellen Messwerte anzeigen, sowie eine Meldung, dass der Wasserstand niedrig ist.
@@ -243,3 +246,13 @@ Ihr neues automatisiertes Hydroponiksystem ist nun betriebsbereit! Wir wünschen
 - Verwenden Sie nur lebensmittelechte Materialien für alle Teile, die mit Wasser und Pflanzen in Kontakt kommen.
 - Stellen Sie sicher, dass die Pumpe für den Dauerbetrieb geeignet ist und nicht überhitzt.
 - Führen sie nur Arbeiten durch, die Sie sicher beherrschen und die Sie durchführen dürfen. Andernfalls ziehen Sie einen Fachmann hinzu.
+
+## Anregungen 
+im Folgenden haben wir Ihnen einige Ideen zusammengestellt, wie Sie das Projekt erweitern oder anpassen können:
+- Integration eines pH- und EC-Sensors zur Überwachung der Nährlösung
+- Automatisierte Nachfüllung der Nährlösung in den Eimer
+- Steuerung der Beleuchtung für optimales Pflanzenwachstum
+- Mobile App zur Fernüberwachung und Steuerung des Systems (ggf. Verwendung eines WLAN-Moduls oder eines ESP32 statt des Arduino Nano)
+- Erweiterung des Systems um eine automatische Belüftung der Pflanzen
+- Integration von Kameras zur Überwachung des Pflanzenwachstums
+- Anpassung der Bewässerung des Systems basierend auf Feuchtigkeitsmessungen in der Steinwolle
