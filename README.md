@@ -187,7 +187,9 @@ Achten Sie darauf, dass keine Kabel gequetscht werden, wenn das Gehäuse geschlo
 
 ![Gehäuse und Gehäusedeckel](pictures/Gehause_und_Gehausedeckel.jpeg)
 
-Im Anschluss wird das verschlossene Gehäuse auf dem Eimer mit zwei M3 (empfohlene Länge 15mm) Schrauben, sowie zwei M3 Muttern befestigt. Idealerweise sollten sie Karosseriescheiben verwenden, um eine bessere Lastverteilung auf dem Langloch des Gehäuses zu gewährleisten und bei der Befestigung zwei weitere Muttern verwenden und die gegeneinander festzuziehen, um ein Lösen der Schrauben zu verhindern.
+Im Anschluss wird das verschlossene Gehäuse auf dem Eimer mit zwei M3 (empfohlene Länge 15mm) Schrauben, sowie zwei M3 Muttern befestigt in den Löchern, die Luitzor für die Befestigung von LED-Trägern vorgesehen hat, verschraubt.
+
+Idealerweise sollten sie Karosseriescheiben verwenden, um eine bessere Lastverteilung auf dem Langloch des Gehäuses zu gewährleisten und bei der Befestigung zwei weitere Muttern verwenden und die gegeneinander festzuziehen, um ein Lösen der Schrauben zu verhindern.
 
 Sicht von oben:
 ![verschlossenes Gehäuse auf Eimer, Sicht von Oben](pictures/Schrauben_Gehause_an_Deckel_oben.jpeg)
@@ -196,7 +198,7 @@ Sicht von unten:
 
 
 ## Anzüchten von Pflanzen
-In dem Verlauf unseres Projektes haben wir diverse Pflanzen erfolgreich angezüchtet um diese anschließend in den Hydroponikturm zu setzen. 
+In dem Verlauf unseres Projektes haben wir diverse Pflanzen erfolgreich angezüchtet um diese anschließend in den Hydroponikturm zu setzen (oder direkt dort angezüchtet). 
 
 Allgemein wird zwischen Hell- und Dunkelkeimern unterschieden. Dementsprechend sollten Sie sich vorab informieren, ob die von Ihnen gewünschten Pflanzen Hell- oder Dunkelkeimer sind, um die Keimbedingungen entsprechend anzupassen.
 
@@ -218,17 +220,23 @@ Eine weitere Möglichkeit ist die Anzucht der Pflanzen direkt in den (herausgeno
 
 ## Inbetriebnahme
 Schließen Sie die Stromversorgung an das Gehäuse an. Das Display sollte nun aufleuchten und die aktuellen Messwerte anzeigen, sowie eine Meldung, dass der Wasserstand niedrig ist.
-Füllen Sie den Eimer mit Wasser auf. Die Wasserstandsanzeige auf dem Display sollte sich entsprechend aktualisieren.
-Stellen sie sicher, dass die Pumpe korrekt mit dem Wasserschlauch verbunden ist, der in den Hydroponikturm führt und der Turm keinerlei Undichtigkeiten aufweist.
-Drücken Sie den Taster, um die Pumpe manuell zu starten. Überprüfen Sie, ob die Pumpe ordnungsgemäß funktioniert und Wasser durch den Hydroponikturm pumpt.
 
-Füllen Sie die Pflanzmodule mit den gewünschten Pflanzen und setzen Sie diese in den Hydroponikturm ein.
+![Display mit Messwerten und Fehlermeldung](pictures/Display_Messwerte_Fehler.jpeg)
+
+Füllen Sie den Eimer mit Wasser und ggf. einer Nährlösung auf. Die Wasserstandsanzeige auf dem Display sollte sich entsprechend aktualisieren.
+
+![Display mit Messwerten ohne Fehlermeldung](pictures/Display_Messwerte.jpeg)
+
+
+
+Stellen sie sicher, dass die Pumpe korrekt mit dem Wasserschlauch verbunden ist, der in den Hydroponikturm führt und der Turm keinerlei Undichtigkeiten aufweist.
+Drücken Sie den Taster, um die Pumpe manuell zu starten und überprüfen Sie, ob die Pumpe ordnungsgemäß funktioniert und Wasser durch den Hydroponikturm pumpt, welches von oben nach unten tropfen sollte.
+
+Sollten sie Probleme mit Undichtigkeiten der Bajonettverbindungen der Module haben, können Sie diese mit einem geeigneten Teflonband abdichten.
+
+Ist die Funktionstüchtigkeit und Dichtigkeit des Systems bestätigt, so können Sie die ersten Pflanzen in den Hydroponikturm einsetzen oder dort anzüchten.
 
 Ihr neues automatisiertes Hydroponiksystem ist nun betriebsbereit! Wir wünschen Ihnen viel Erfolg und Freude beim Anbau Ihrer Pflanzen und selbstverständlich auch beim den ersten erfolgreichen Ernten.
-
-
-
-
 
 ## Warnungen
 - Achten Sie darauf, dass alle elektronischen Komponenten vor Wasser geschützt sind, um Kurzschlüsse zu vermeiden.
