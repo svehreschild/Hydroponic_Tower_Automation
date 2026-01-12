@@ -1,8 +1,8 @@
 # Hydroponic_Tower_Automation
 Hier finden Sie eine detaillierte Anleitung, um einen modularen Hydroponikturm zu automatisieren. Die Anleitung enthält einen Schaltplan, den Code der Software, eine Liste der benötigten Materialien und eine Schritt-für-Schritt-Anleitung.
 
-TODO:
-![Bild-Übersicht](pictures/overview.jpg)
+TODO: ggf. noch mit Pflanzen erneuern
+![Bild-Übersicht](pictures/Uebersicht.jpeg)
 
 ## 3D-Druck
 **Grundaufbau:** 
@@ -141,9 +141,26 @@ In den Eimer wird ein entsprechendes Loch für den Wasserstandsensor gebohrt, de
 ![Loch im Eimer](pictures/Loch_Eimer.png)
 
 
-Anschließend erhitzen sie vier M (TODO:) Einschmelzgewinde und setzen diese in das Gehäuse zur Befestigung des Deckels ein.
-Außerdem verkleben sie die Hauptplatinenhalterung und den DHT22 im Gehäuse mit einem geeigneten Kleber (z.B. Zweikomponentenkleber). Die Platinenhalterung für das Relaismodul wird lediglich mit (TODO:) Schrauben befestigt. Das RTC-Modul wird dem Gehäuse an dem dafür vorgesehenen Platz mit (TODO:) Schrauben angebracht. In den Deckel des Gehäuses wird das Display mit (TODO:) Schrauben befestigt.
-Den Taster zum aktivieren des manuellen Pumpenbetriebs können Sie an der Vorderseite des Gehäuses in dem entsprechenden Ausschnitt anbringen.
+Anschließend erhitzen sie vier M3 Einschmelzgewinde (mit einer Länge von  ca 6mm) und setzen diese in das Gehäuse zur Befestigung des Deckels ein.
+
+![Einschmelzgewinde](pictures/Einschmelzgewinde.jpeg)
+
+Außerdem verkleben sie die Hauptplatinenhalterung und den DHT22 im Gehäuse mit einem geeigneten Kleber (z.B. Zweikomponentenkleber).
+Achten Sie darauf, die Platinenhalterung so zu positionieren, dass der Anschluss für die Spannungsversorgung der Platine durch die Aussparung im Gehäuse passt.
+
+Die Platinenhalterung für das Relaismodul wird lediglich mit zwei M2,5 Schrauben befestigt. Das RTC-Modul wird in dem Gehäuse an dem dafür vorgesehenen Platz mit drei M2,5 Schrauben angebracht. 
+Beachten Sie, dass zu lange Schrauben das Gehäuse beschädigen können.
+Den Taster zum aktivieren des manuellen Pumpenbetriebs können Sie an der Vorderseite des Gehäuses in dem entsprechenden Ausschnitt anbringen und ihn mit der mitgelieferten Mutter befestigen.
+
+TODO: Länge ergänzen
+
+
+
+TODO: Bilder mit Beschriftung einfügen
+
+
+In den Deckel des Gehäuses wird das Display mit (TODO:) Schrauben befestigt.
+
 
 
 
@@ -153,7 +170,11 @@ TODO: ggf hier mehr Bilder einfügen
 Im Anschluss verlöten Sie die Elektronikkomponenten gemäß dem [Schaltplan](Schaltplan.pdf) auf ihrer Platine.
 ![Hauptplatine](pictures/Main_Platine.png)
 
+
+
 Sinnvoll ist es die Verbindungen zu den einzelnen Komponenten über Schraubverbindungen herzustellen, damit diese bei Bedarf einfach getauscht werden können. Achten Sie darauf, dass die Kabel ausreichend lang sind, um alle Komponenten zu erreichen.
+
+TODO: Kabelschuhe
 
 ![Hauptplatine mit Verkabelung](pictures/Kabel_angeschlossen.jpg)
 
