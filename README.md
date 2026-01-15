@@ -27,7 +27,7 @@ Mindestens sollten die folgenden Komponenten gedruckt werden:
 - 1x Filling_Cap.STL
 - 1x Filling_Cap_Symbol.STL
 
-Soll der Turm mehrere Ebenen haben, wozu wir raten, müssten Sie pro Ebene einmal `4-Way_Planting_Module_Hollow_Twist.STL`, viermal `Standard_Pot_02_For_4-5-Way_Planting_Module.STL` und einmal `Module_Spacer_40mm.STL` drucken. Der Abstandhalter `Module_Spacer_40mm.STL` ist nicht zwingend notwendig, aber wir empfehlen ihn, um den Pflanzen mehr Platz zum Wachsen zu geben. Außerdem empfehlen wir, mehrere Pflanzenpods `Standard_Pot_02_For_4-5-Way_Planting_Module.STL`, als Reserve zu drucken, falls eine Pflanze nicht gedeiht oder ersetzt werden muss.
+Soll der Turm mehrere Ebenen haben, müssten Sie pro Ebene einmal `4-Way_Planting_Module_Hollow_Twist.STL`, viermal `Standard_Pot_02_For_4-5-Way_Planting_Module.STL` und einmal `Module_Spacer_40mm.STL` drucken. Der Abstandhalter `Module_Spacer_40mm.STL` ist nicht zwingend notwendig, aber wir empfehlen ihn, um den Pflanzen mehr Platz zum Wachsen zu geben. Außerdem empfehlen wir, mehrere Pflanzenpods `Standard_Pot_02_For_4-5-Way_Planting_Module.STL`, als Reserve zu drucken, falls eine Pflanze nicht gedeiht oder ersetzt werden muss.
 
 Bei der Kombination der Abdeckkappen und der zugehörigen Symbole empfehlen wir, die Symbole mit einem Kleber auf die Kappen zu kleben oder, mit einem Drucker, der über ein AMS (Automatisches Materialwechselsystem) verfügt, die Symbole in einer anderen Farbe zu drucken, um eine bessere Sichtbarkeit zu gewährleisten.
 
@@ -48,7 +48,7 @@ In der Datei `3D_Berechnung.xlsx` können Sie vorab kalkulieren, wie viel Filame
 
 
 **Informationen zum Filament:**
-Bei dem verwendeten Filament handelt es sich um lebensmittelechtes PET-G von Extrudr. Weitere Informationen zum Filament finden Sie hier: [Extrudr PET-G](https://www.extrudr.com/de/de/products/petg/).
+Bei dem verwendeten Filament handelt es sich um lebensmittelechtes PET-G von Extrudr. Weitere Informationen zum Filament finden Sie hier in dem `Regulatorischen Datenblatt`: [Extrudr PET-G](https://www.extrudr.com/de/de/products/petg/).
 
 Es sei noch darauf hingewiesen, dass PET-G im Vergleich zu PLA eine höhere Drucktemperatur benötigt und die Druckbetttemperatur ebenfalls höher eingestellt werden muss.
 
@@ -66,7 +66,7 @@ Die Automatisierung des Hydroponikturms umfasst die Erstellung einer Steuerplati
 - Arduino Nano
 - Display mit I2C Schnittstelle
 - DHT22 Sensor (für Temperatur und Luftfeuchtigkeit)
-- Wasserstandsensor
+- Schwimmerschalter (Wasserstandserkennung)
 - Buck-Converter
 - Relaismodul
 - Pumpe
@@ -90,8 +90,8 @@ Anhand des [Schaltplans](Schaltplan.pdf) können Sie die Verdrahtung der einzeln
 ![Schaltplan](pictures/Schaltplan.png)
 
 ## Zusätzliches Zubehör
-Um dem Hydroponikturm eine stabile und wasserdichte Basis zu geben, empfehlen wir die Verwendung eines passenden Eimers. In unserem Fall haben wir (anders als im Originaldesign von Luitzor) einen entsprechenden Eimer im Baumarkt mit einem Außendurchmesser von 21,5cm gekauft, der sich mit einem gekauften Dichtungsband für Fenster und Türen, welches in den Deckel eingeklebt wird, abdichten lässt.
-Der (auf 75% skalierte) Deckel des Eimers hat einen Innendurchmesser von ca. 22cm, daher sollte der Eimer einen Außendurchmesser haben, der etwas kleiner ist, damit der Deckel auf den Eimer passt.
+Um dem Hydroponikturm eine stabile und wasserdichte Basis zu geben, empfehlen wir die Verwendung eines passenden Topfs. In unserem Fall haben wir (anders als im Originaldesign von Luitzor) einen entsprechenden Topf im Baumarkt mit einem Außendurchmesser von 21,5cm gekauft, der sich mit einem gekauften Dichtungsband für Fenster und Türen, welches in den Deckel eingeklebt wird, abdichten lässt.
+Der (auf 75% skalierte) Deckel hat einen Innendurchmesser von ca. 22cm, daher sollte der Topf einen Außendurchmesser haben, der etwas kleiner ist, damit der Deckel passt.
 
 ![Deckel](pictures/Deckel.png)
 
@@ -103,7 +103,7 @@ Die Software ist so konzipiert, dass sie die folgenden Funktionen erfüllt:
 - Speicherung und Abruf von Einstellungen über das RTC-Modul
 - Anzeige von Temperatur, Luftfeuchtigkeit und Wasserstand auf dem Display
 - Steuerung der Pumpe basierend auf manuellen Eingaben und voreingestellten Zeitintervallen
-- Alarmierung bei niedrigem Wasserstand und Verhindern des Pumpenbetriebs in diesem Fall
+- Alarmierung bei zu niedrigem Wasserstand und Verhindern des Pumpenbetriebs in diesem Fall
 
 Sollten Sie andere Zeitintervalle, Bewässerungsdauern oder zusätzliche Funktionen benötigen, können Sie den Quellcode entsprechend anpassen.
 
@@ -132,13 +132,13 @@ Achten Sie darauf, dass die Module korrekt ausgerichtet sind, damit die Pflanzen
 ![Modulgruppen um 45 Grad versetzt](pictures/Modulgruppen_versetzt.png)
 
 
-Der Deckel des Eimers wird ebenfalls bestückt. Dieser beinhaltet die Abdeckungen für die Pumpe und die Einfüllöffnung für Wasser. In der Mitte des Deckels wird der Turm eingesetzt.
+Der Deckel des Topfs wird ebenfalls bestückt mit den Abdeckungen für die Pumpe und dem Zugang zum Wassertank. In der Mitte des Deckels wird der Turm aufgeschraubt.
 
 ![Bestückung des Deckels](pictures/Deckel_montieren.jpeg)
 
-In den Eimer wird ein entsprechendes Loch für den Wasserstandsensor gebohrt, der dann von außen in den Eimer eingesetzt und mit einer Mutter befestigt wird. Achten Sie darauf, dass der Sensor wasserdicht im Eimer sitzt, damit kein Wasser austreten kann.
+In den Topf wird ein entsprechendes Loch für den Schwimmerschalter gebohrt, der dann von außen in den Topf eingesetzt und mit einer Mutter befestigt wird. Achten Sie darauf, dass der Sensor wasserdicht im Topf sitzt, damit kein Wasser austreten kann.
 
-![Loch im Eimer](pictures/Loch_Eimer.png)
+![Loch im Topf](pictures/Loch_Eimer.png)
 
 
 Anschließend erhitzen Sie vier M3 Einschmelzgewinde (mit einer Länge von ca. 6 mm) und setzen diese in das Gehäuse zur Befestigung des Deckels ein.
@@ -164,21 +164,21 @@ Sinnvoll ist es die Verbindungen zu den einzelnen externen Komponenten über Sch
 
 ![Hauptplatine](pictures/Main_Platine.png)
 
-Die Verkabelung der einzelnen Komponenten im Gehäuse erfolgt ebenfalls gemäß dem [Schaltplan](Schaltplan.pdf). Achten Sie darauf, dass die Kabel ausreichend lang sind, um alle Komponenten zu erreichen. Sinnvoll ist es, die Kabel mit Schrumpfschlauch zu isolieren und entsprechende Kabelschuhe zu verwenden.
+Die Verkabelung der einzelnen Komponenten im Gehäuse erfolgt ebenfalls gemäß dem [Schaltplan](Schaltplan.pdf). Achten Sie darauf, dass die Kabel ausreichend lang sind, um alle Komponenten zu erreichen. Sinnvoll ist es, die Kabel mit Schrumpfschlauch zu isolieren und entsprechende Aderendhülsen zu verwenden.
 
 ![Hauptplatine mit Verkabelung](pictures/Kabel_angeschlossen.jpg)
 
-Bevor die Pumpe in den Eimer eingesetzt wird, wird sie mit einem Stück Fliegengitter vor Verunreinigungen geschützt. Das Fliegengitter wird mit einem Kabelbinder an der Pumpe befestigt. 
+Bevor die Pumpe in den Topf eingesetzt wird, wird sie mit einem Stück Fliegengitter vor Verunreinigungen geschützt. Das Fliegengitter wird mit einem Kabelbinder an der Pumpe befestigt. 
 
 ![Pumpe mit Fliegengitter](pictures/Pumpe_mit_Fliegengitter.png)
 
-Anschließend wird die Pumpe durch den dafür vorgesehenen Ausschnitt im Deckel des Eimers eingesetzt und mit der Platine entsprechend des Schaltplans verbunden. Das Kabel der Pumpe sollte durch die Aussparung im Gehäuse geführt werden, damit das Gehäuse später geschlossen werden kann.
+Anschließend wird die Pumpe durch den dafür vorgesehenen Ausschnitt im Deckel des Topfs eingesetzt und mit der Platine entsprechend des Schaltplans verbunden. Das Kabel der Pumpe sollte durch die Aussparung an der Rückseite des Gehäuses geführt werden, damit dieses später geschlossen werden kann.
 
 ![Pumpe eingesetzt](pictures/Pumpe_eingesetzt.jpeg)
 
 Im Anschluss wird nun der finale Feinschliff der Verkabelung durchgeführt. Die Kabel sollten so verlegt werden, dass sie nicht im Weg sind und anschließend vorsichtig mit Kabelbindern fixiert und gebündelt werden. 
 Sie können überschüssige Kabellängen kürzen oder aufrollen, um eine ordentliche Verkabelung zu gewährleisten.
-Achten Sie darauf, dass keine Kabel gequetscht werden könnten, wenn die Kabelbinder zu fest angezogen werden.
+Achten Sie darauf, dass Sie keine Kabel quetschen, wenn Sie die Kabelbinder fest ziehen.
 
 ![Vollständige Verkabelung](pictures/Vollstaendige_Verkabelung.jpeg)
 
@@ -187,26 +187,28 @@ Achten Sie darauf, dass keine Kabel gequetscht werden, wenn das Gehäuse geschlo
 
 ![Gehäuse und Gehäusedeckel](pictures/Gehause_und_Gehausedeckel.jpeg)
 
-Im Anschluss wird das verschlossene Gehäuse auf dem Eimer mit zwei M3 (empfohlene Länge 15 mm) Schrauben, sowie zwei M3 Muttern befestigt in den Löchern, die Luitzor für die Befestigung von LED-Trägern vorgesehen hat, verschraubt.
+Im Anschluss wird das verschlossene Gehäuse auf dem Topfdeckel mit zwei M3 Schrauben (empfohlene Länge 15 mm), sowie zwei (oder vier) M3 Muttern befestigt. Verwenden Sie dazu die Langlöcher des Gehäuses und die Löcher im Topfdeckel, die Luitzor für die Befestigung von LED-Trägern vorgesehen hat.
 
-Idealerweise sollten Sie Karosseriescheiben verwenden, um eine bessere Lastverteilung auf dem Langloch des Gehäuses zu gewährleisten und bei der Befestigung zwei weitere Muttern verwenden und diese gegeneinander festzuziehen, um ein Lösen der Schrauben zu verhindern.
+Idealerweise sollten Sie M3 Karosseriescheiben verwenden, um eine bessere Lastverteilung auf den Langlöchern des Gehäuses zu gewährleisten und bei der Befestigung zwei weitere Muttern verwenden und diese gegeneinander festzuziehen, um ein Lösen der Schrauben zu verhindern.
 
 Sicht von oben:
-![verschlossenes Gehäuse auf Eimer, Sicht von Oben](pictures/Schrauben_Gehause_an_Deckel_oben.jpeg)
+![verschlossenes Gehäuse auf Topf, Sicht von Oben](pictures/Schrauben_Gehause_an_Deckel_oben.jpeg)
 Sicht von unten:
-![verschlossenes Gehäuse auf Eimer, Sicht von Unten](pictures/Schrauben_Gehause_an_Deckel_unten.jpeg)
+![verschlossenes Gehäuse auf Topf, Sicht von Unten](pictures/Schrauben_Gehause_an_Deckel_unten.jpeg)
 
+Achten Sie darauf, dass Sie für die Schrauben und Muttern Edelstahl oder verzinkte Alternativen verwenden, um Korrosion durch die Nähe zum Wasser zu vermeiden.
 
 ## Anzüchten von Pflanzen
-In dem Verlauf unseres Projektes haben wir diverse Pflanzen erfolgreich angezüchtet, um diese anschließend in den Hydroponikturm zu setzen (oder direkt dort angezüchtet). 
+In dem Verlauf unseres Projektes haben wir diverse Pflanzen angezüchtet, um diese anschließend in den Hydroponikturm zu setzen (oder direkt dort angezüchtet). 
 
-Allgemein wird zwischen Hell- und Dunkelkeimern unterschieden. Dementsprechend sollten Sie sich vorab informieren, ob die von Ihnen gewünschten Pflanzen Hell- oder Dunkelkeimer sind, um die Keimbedingungen entsprechend anzupassen.
+Allgemein wird zwischen Licht- und Dunkelkeimern unterschieden. Dementsprechend sollten Sie sich vorab informieren, ob die von Ihnen gewünschten Pflanzen Licht- oder Dunkelkeimer sind, um die Keimbedingungen entsprechend anzupassen.
 
 Eine Möglichkeit ist es, die Samen in feuchtem Küchenpapier oder Watte anzuzüchten. Legen Sie die Samen dazu zwischen zwei feuchte Lagen und halten Sie diese stets feucht. Achten Sie darauf, dass die Samen nicht zu nass liegen, da sie sonst faulen können. Stellen Sie die Samen an einen warmen Ort mit ausreichend Licht (je nach Keimertyp) und warten Sie, bis die Samen keimen. 
+Beachten Sie außerdem, dass es je nach Pflanze unterschiedlich lange dauern kann, bis die Samen keimen.
 
 ![Keimlinge im Küchenpapier](pictures/Keimen_Kuechenpapier.png)
 
-Nach dem Keimen können die kleinen Pflanzen vorsichtig in befeuchtete Steinwollwürfel gepflanzt werden. Diese werden anschließend in die Pods des Hydroponikturms eingesetzt. Achten Sie dabei darauf, die Wurzeln nicht zu beschädigen. 
+Nach dem Keimen können die kleinen Pflanzen vorsichtig in befeuchtete Steinwollwürfel gepflanzt werden. Diese werden zuvor in die Pods des Hydroponikturms eingesetzt. Achten Sie dabei darauf, die Wurzeln nicht zu beschädigen. 
 
 ![Steinwolle und Pods](pictures/Steinwolle_Pod.jpeg)
 
@@ -214,18 +216,18 @@ Nach dem Keimen können die kleinen Pflanzen vorsichtig in befeuchtete Steinwoll
 ![Steinwolle und Pods](pictures/Keimling_in_Pod.jpeg)
 
 
-Eine weitere Möglichkeit ist die Anzucht der Pflanzen direkt in den (herausgenommenen) Pods des Hydroponikturms. Füllen Sie die Pods dazu mit feuchter Steinwolle pflanzen Sie die Samen direkt hinein. Halten Sie das Substrat stets feucht und stellen Sie die Pods an einen warmen Ort mit ausreichend Licht (je nach Keimertyp).
+Eine weitere Möglichkeit ist die Anzucht der Pflanzen direkt in den (herausgenommenen) Pods des Hydroponikturms. Füllen Sie die Pods dazu mit feuchter Steinwolle und pflanzen Sie die Samen direkt hinein. Halten Sie das Substrat stets feucht, aber nicht zu nass, und stellen Sie die Pods an einen warmen Ort mit ausreichend Licht (je nach Keimertyp).
 
 Beachten Sie außerdem, dass einige Pflanzen spezielle Anforderungen an die Nährlösungen, den pH-Wert des Wassers und die Lichteinstrahlung haben. Informieren Sie sich daher vorab über die Bedürfnisse der von Ihnen gewünschten Pflanzen, um optimale Wachstumsbedingungen zu gewährleisten.
 
 
 
 ## Inbetriebnahme
-Schließen Sie die Stromversorgung an das Gehäuse an. Das Display sollte nun aufleuchten und die aktuellen Messwerte anzeigen, sowie eine Meldung, dass der Wasserstand niedrig ist.
+Schließen Sie die Stromversorgung an das Gehäuse an. Das Display sollte nun aufleuchten und die aktuellen Messwerte anzeigen, sowie eine Meldung, dass der Wasserstand zu gering ist.
 
 ![Display mit Messwerten und Fehlermeldung](pictures/Display_Messwerte_Fehler.jpeg)
 
-Füllen Sie den Eimer mit Wasser und ggf. einer Nährlösung auf. Die Wasserstandsanzeige auf dem Display sollte sich entsprechend aktualisieren.
+Füllen Sie den Topf mit Wasser und ggf. einer Nährstofflösung auf. Die Wasserstandsanzeige auf dem Display sollte sich entsprechend aktualisieren.
 
 ![Display mit Messwerten ohne Fehlermeldung](pictures/Display_Messwerte.jpeg)
 
@@ -238,7 +240,7 @@ Sollten Sie Probleme mit Undichtigkeiten der Bajonettverbindungen der Module hab
 
 Ist die Funktionstüchtigkeit und Dichtigkeit des Systems bestätigt, so können Sie die ersten Pflanzen in den Hydroponikturm einsetzen oder dort anziehen.
 
-Ihr neues, automatisiertes Hydroponiksystem ist nun betriebsbereit! Wir wünschen Ihnen viel Erfolg und Freude beim Anbau Ihrer Pflanzen und selbstverständlich auch bei den ersten erfolgreichen Ernten.
+Ihr neues, automatisiertes Hydroponiksystem ist nun betriebsbereit! Wir wünschen Ihnen viel Erfolg und Freude beim Anbau Ihrer Pflanzen.
 
 ## Warnungen
 - Achten Sie darauf, dass alle elektronischen Komponenten vor Wasser geschützt sind, um Kurzschlüsse zu vermeiden.
@@ -249,9 +251,10 @@ Ihr neues, automatisiertes Hydroponiksystem ist nun betriebsbereit! Wir wünsche
 ## Anregungen 
 Im Folgenden haben wir Ihnen einige Ideen zusammengestellt, wie Sie das Projekt erweitern oder anpassen können:
 - Integration eines pH- und EC-Sensors zur Überwachung der Nährlösung
-- Automatisierte Nachfüllung der Nährlösung in den Eimer
+- Automatische Auffüllung des Wassertanks bei niedrigem Wasserstand
+- Automatisierte Nachfüllung der Nährlösung in den Topf
 - Steuerung der Beleuchtung für optimales Pflanzenwachstum
-- Mobile App zur Fernüberwachung und Steuerung des Systems (ggf. Verwendung eines WLAN-Moduls oder eines ESP32 statt des Arduino Nano)
+- Mobile App zur Fernüberwachung und Steuerung des Systems um Parameter, wie die Bewässerungszeit anzupassen (ggf. Verwendung eines WLAN-Moduls oder eines ESP32 statt des Arduino Nano)
 - Erweiterung des Systems um eine automatische Belüftung der Pflanzen
 - Integration von Kameras zur Überwachung des Pflanzenwachstums
 - Anpassung der Bewässerung des Systems basierend auf Feuchtigkeitsmessungen in der Steinwolle
