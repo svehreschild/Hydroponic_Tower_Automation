@@ -87,7 +87,7 @@ Sie benötigen außerdem noch folgendes Zubehör:
 - Kabel
 
 Anhand des [Schaltplans](Schaltplan.pdf) können Sie die Verdrahtung der einzelnen Komponenten nachvollziehen:
-![Schaltplan](pictures/Schaltplan.png)
+![Schaltplan](pictures/Schaltplan.jpg)
 
 ## Zusätzliches Zubehör
 Um dem Hydroponikturm eine stabile und wasserdichte Basis zu geben, empfehlen wir die Verwendung eines passenden Topfs. In unserem Fall haben wir (anders als im Originaldesign von Luitzor) einen entsprechenden Topf im Baumarkt mit einem Außendurchmesser von 21,5cm gekauft, der sich mit einem gekauften Dichtungsband für Fenster und Türen, welches in den Deckel eingeklebt wird, abdichten lässt.
