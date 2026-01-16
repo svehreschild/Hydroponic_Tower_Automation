@@ -259,3 +259,4 @@ Im Folgenden haben wir Ihnen einige Ideen zusammengestellt, wie Sie das Projekt 
 - Integration von Kameras zur Überwachung des Pflanzenwachstums
 - Anpassung der Bewässerung des Systems basierend auf Feuchtigkeitsmessungen in der Steinwolle
 - Datenspeicherung und Analyse der Wachstumsbedingungen zur Optimierung des Pflanzenanbaus
+- Pufferung des Betriebs bei Stromausfällen durch eine Batterie
