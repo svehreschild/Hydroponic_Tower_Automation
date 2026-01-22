@@ -199,7 +199,7 @@ Sicht von unten:
 Achten Sie darauf, dass Sie für die Schrauben und Muttern Edelstahl oder verzinkte Alternativen verwenden, um Korrosion durch die Nähe zum Wasser zu vermeiden.
 
 ## Anzüchten von Pflanzen
-In dem Verlauf unseres Projektes haben wir diverse Pflanzen angezüchtet, um diese anschließend in den Hydroponikturm zu setzen (oder direkt dort angezüchtet). 
+Im Verlauf unseres Projekts haben wir verschiedene Varianten der Pflanzenanzucht ausgetestet. Im Folgenden beschreiben wir zwei Möglichkeiten, wie Sie die Pflanzen für den Hydroponikturm ziehen können.
 
 Allgemein wird zwischen Licht- und Dunkelkeimern unterschieden. Dementsprechend sollten Sie sich vorab informieren, ob die von Ihnen gewünschten Pflanzen Licht- oder Dunkelkeimer sind, um die Keimbedingungen entsprechend anzupassen.
 
@@ -220,6 +220,22 @@ Eine weitere Möglichkeit ist die Anzucht der Pflanzen direkt in den (herausgeno
 
 Beachten Sie außerdem, dass einige Pflanzen spezielle Anforderungen an die Nährlösungen, den pH-Wert des Wassers und die Lichteinstrahlung haben. Informieren Sie sich daher vorab über die Bedürfnisse der von Ihnen gewünschten Pflanzen, um optimale Wachstumsbedingungen zu gewährleisten.
 
+----
+*In Kürze wird hier noch ein weiteres Kapitel eingefügt.*  
+
+
+Aktuell testen wir eine weitere Methode, um Pflanzen mit ausgeprägten Wasserwurzeln heranzuziehen. Dafür werden die Pflanzen bereits sehr früh beinahe vollständig mit den Wurzeln in ein Wassergefäß gesetzt, um sie dann nach einer Weile in den Turm umzusetzen.
+
+Zunächst werden die Samen in einer entsprechenden Anzuchtschale mit einem sehr kleinen Steinwollwürfel angezogen.
+![Steinwollwürfel in Anzuchtschale](pictures/Samen_in_Anzuchtschale.jpeg)
+
+Die Anzuchtschale wird mit einer durchsichtigen Haube abgedeckt, um eine hohe Luftfeuchtigkeit zu gewährleisten. Über einen Schlitz in der Haube kann die Luftzirkulation reguliert werden.
+
+Zu beachten ist auch an dieser Stelle, dass die Samen je nach Pflanzenart unterschiedliche Anforderungen an Licht und Temperatur haben. Informieren Sie sich daher vorab über die Bedürfnisse der von Ihnen gewünschten Pflanzen, um optimale Wachstumsbedingungen zu gewährleisten.
+
+Nachdem die Pflanzen gekeimt sind und die Wurzeln eine gewisse Länge erreicht haben, wird die Steinwolle hälftig aufgeschnitten und die Pflanze mitsamt der Wurzeln so in die Steinwolle gesetzt, dass die Wurzeln in das Wassergefäß hineinragen. Nun ...
+
+----
 
 
 ## Inbetriebnahme
