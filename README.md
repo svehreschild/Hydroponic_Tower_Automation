@@ -221,8 +221,7 @@ Eine weitere Möglichkeit ist die Anzucht der Pflanzen direkt in den (herausgeno
 Beachten Sie außerdem, dass einige Pflanzen spezielle Anforderungen an die Nährlösungen, den pH-Wert des Wassers und die Lichteinstrahlung haben. Informieren Sie sich daher vorab über die Bedürfnisse der von Ihnen gewünschten Pflanzen, um optimale Wachstumsbedingungen zu gewährleisten.
 
 ----
-*In Kürze wird hier noch ein weiteres Kapitel eingefügt.*  
-
+*In Kürze wird hier noch ein weiteres Kapitel eingefügt. Es folgt ein kleiner Teaser.*  
 
 Aktuell testen wir eine weitere Methode, um Pflanzen mit ausgeprägten Wasserwurzeln heranzuziehen. Dafür werden die Pflanzen bereits sehr früh beinahe vollständig mit den Wurzeln in ein Wassergefäß gesetzt, um sie dann nach einer Weile in den Turm umzusetzen.
 
