@@ -101,7 +101,9 @@ Der Quellcode für die Steuerung des Hydroponikturms ist in der Datei `Hydroponi
 
 Die Software ist so konzipiert, dass sie die folgenden Funktionen erfüllt:
 - Speicherung und Abruf von Einstellungen über das RTC-Modul
-- Anzeige von Temperatur, Luftfeuchtigkeit und Wasserstand auf dem Display
+- Anzeige von Temperatur, Luftfeuchtigkeit und Systemstatus auf dem Display
+- Displayanzeige der verbleibenden Laufzeit der Pumpe oder der restliche Pausenzeit
+- Pausenfunktion: Durch Drücken des Tasters für 3 Sekunden wird eine 3-stündige Bewässerungspause aktiviert. Ein kurzer Druck während der Pause bricht diese vorzeitig ab
 - Steuerung der Pumpe basierend auf manuellen Eingaben und voreingestellten Zeitintervallen
 - Alarmierung bei zu niedrigem Wasserstand und Verhindern des Pumpenbetriebs in diesem Fall
 

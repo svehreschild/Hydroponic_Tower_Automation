@@ -6,23 +6,38 @@
 RTC_DS3231 rtc;
 LiquidCrystal_I2C lcd(0x27,  20, 4);
 
+// PIN Definitionen
 #define pumpePin  4    // Pumpe an Pin 4
 #define tasterPin 7    // Taster an Pin 7
 #define fuellstand 5
-
 #define DHTPIN 6   
 #define DHTTYPE DHT22
 
+// Anpassbare Zeiten
+const unsigned long DAUER_AUTO    = 30000;   // Bewässerung (Automatik)
+const unsigned long DAUER_MANUELL = 10000;    // Bewässerung (Manueller Tastendruck)
+const int INTERVALL_MINUTEN       = 30;       // Alle X Minuten gießen
+const int START_STUNDE            = 9;        // Ab XX:00 Uhr
+const int ENDE_STUNDE             = 20;       // Bis XX:00 Uhr
+const unsigned long PAUSE_DAUER   = 3 * 3600000ULL; // X=3 Stunden Pause nach Langdruck (ULL = Unsigned Long Long)
+const unsigned long LONG_PRESS_ZEIT = 3000;   // Langdruck
+
+// Variablen
 float temp;
 float humidity;
 unsigned long letzteSerialZeit = 0;
-enum PumpenModus { KEINER, AUTO, MANUELL };
+unsigned long pumpeStartZeit = 0;
+unsigned long pauseStartZeit = 0;
+unsigned long tasterGedruecktZeit = 0;
+
+bool pumpeAn = false;
+bool tasterWarGedrueckt = false;
+
+enum PumpenModus { KEINER, AUTO, MANUELL, PAUSE };
 PumpenModus pumpenModus = KEINER;
 
 DHT dht(DHTPIN, DHTTYPE);
 
-unsigned long pumpeStartZeit = 0;
-bool pumpeAn = false;
 
 void setup() {
   Serial.begin(9600); // Serieller Monitor zur Kontrolle
@@ -33,7 +48,7 @@ void setup() {
 
   // Uhrzeit setzen (einmalig)
   // Format: Jahr, Monat, Tag, Stunde, Minute, Sekunde
-  //rtc.adjust(DateTime(2025, 12, 25, 11, 28, 50)); 
+  // rtc.adjust(DateTime(2026, 2, 9, 18, 21, 40)); 
 
 
   pinMode(pumpePin, OUTPUT);
@@ -42,12 +57,9 @@ void setup() {
   pinMode(tasterPin, INPUT); // (externer) Pullup, weil Taster gegen GND
   pinMode(fuellstand, INPUT);
 
-  // LCD
-  //initialize lcd screen
-  lcd.init();
-  // turn on the backlight
-  lcd.backlight();
 
+  lcd.init();
+  lcd.backlight();
   dht.begin();
 }
 
@@ -55,165 +67,108 @@ void loop() {
   DateTime jetzt = rtc.now();
   temp = dht.readTemperature();
   humidity = dht.readHumidity();
-  
+  unsigned long aktuelleMillis = millis();
 
-  // --- Serielle Ausgabe nur jede Sekunde ---
-  if (millis() - letzteSerialZeit >= 1000) {
-    letzteSerialZeit = millis();
-    Serial.print("Uhrzeit: ");
-    if (jetzt.hour() < 10) Serial.print("0");
-    Serial.print(jetzt.hour());
-    Serial.print(":");
-    if (jetzt.minute() < 10) Serial.print("0");
-    Serial.print(jetzt.minute());
-    Serial.print(":");
-    if (jetzt.second() < 10) Serial.print("0");
-    Serial.println(jetzt.second());
+  /// TASTER-LOGIK (Kurz/Lang)
+  bool tasterStatus = digitalRead(tasterPin);
 
-      // Temperatur + Luftfeuchtigkeit
-    Serial.print("  |  Temp: ");
-    if (!isnan(temp)) {
-      Serial.print(temp);
-      Serial.print(" °C");
-    } else {
-      Serial.print("Fehler");
+  if (tasterStatus == HIGH) { // Taster wird gedrückt
+    if (!tasterWarGedrueckt) {
+      tasterGedruecktZeit = aktuelleMillis;
+      tasterWarGedrueckt = true;
     }
-
-    Serial.print("  |  Feuchte: ");
-    if (!isnan(humidity)) {
-      Serial.print(humidity);
-      Serial.println(" %");
-    } else {
-      Serial.println("Fehler");
+    // Langdruck erkannt?
+    if (aktuelleMillis - tasterGedruecktZeit >= LONG_PRESS_ZEIT && pumpenModus != PAUSE) {
+      pumpeAn = false;
+      digitalWrite(pumpePin, LOW);
+      pumpenModus = PAUSE;
+      pauseStartZeit = aktuelleMillis;
+      Serial.println("PAUSE AKTIVIERT");
+    }
+  } 
+  else { // Taster losgelassen
+    if (tasterWarGedrueckt) {
+      unsigned long drueckDauer = aktuelleMillis - tasterGedruecktZeit;
+      
+      if (drueckDauer < LONG_PRESS_ZEIT) {
+        if (pumpenModus == PAUSE) {
+          pumpenModus = KEINER; // Pause abbrechen
+          Serial.println("PAUSE ABGEBROCHEN");
+        } 
+        else if (!pumpeAn && digitalRead(fuellstand) == HIGH) {
+          pumpeAn = true;
+          pumpenModus = MANUELL;
+          pumpeStartZeit = aktuelleMillis;
+          digitalWrite(pumpePin, HIGH);
+        }
+      }
+      tasterWarGedrueckt = false;
     }
   }
 
-  // LCD-Ausgabe
-  // Pumpe aus
-  lcd.setCursor(0, 0); // Spalte 0, Zeile 0
-  lcd.print("Uhrzeit: ");
-  lcd.setCursor(12, 0);
-  if (jetzt.hour() < 10) lcd.print("0");
-  lcd.print(jetzt.hour());
-  lcd.print(":");
-  if (jetzt.minute() < 10) lcd.print("0");
-  lcd.print(jetzt.minute());
-  lcd.print(":");
-  if (jetzt.second() < 10) lcd.print("0");
-  lcd.print(jetzt.second());
+  // PAUSEN-TIMER
+  if (pumpenModus == PAUSE && (aktuelleMillis - pauseStartZeit >= PAUSE_DAUER)) {
+    pumpenModus = KEINER;
+    Serial.println("PAUSE BEENDET");
+  }
 
-  lcd.setCursor(0, 1); // Spalte 0, Zeile 1
-  lcd.print("Temperatur:"); 
-  lcd.setCursor(15, 1); //
-  lcd.print(temp, 1); // eine Nachkommastelle
-  lcd.print("C");
-  lcd.setCursor(0, 2); //
-  lcd.print("Luftfeuchte:"); 
-  lcd.setCursor(15, 2);
-  lcd.print(humidity, 1); // eine Nachkommastelle
-  lcd.print("%");
+  // LCD ANZEIGE (Display Zeilen 1-3)
+  lcd.setCursor(0, 0); lcd.print("Uhrzeit:    ");
+  if (jetzt.hour() < 10) lcd.print("0"); lcd.print(jetzt.hour()); lcd.print(":");
+  if (jetzt.minute() < 10) lcd.print("0"); lcd.print(jetzt.minute()); lcd.print(":");
+  if (jetzt.second() < 10) lcd.print("0"); lcd.print(jetzt.second());
 
+  lcd.setCursor(0, 1); lcd.print("Temp:          "); lcd.print(temp, 1); lcd.print("C");
+  lcd.setCursor(0, 2); lcd.print("Feuchte:       "); lcd.print(humidity, 1); lcd.print("%");
 
-
-// Füllstandkontrolle
-  if (digitalRead(fuellstand) == LOW){
+  // SYSTEM-STEUERUNG (Display Zeile 4)
+  
+  // Füllstand kritisch
+  if (digitalRead(fuellstand) == LOW) {
     pumpeAn = false;
     pumpenModus = KEINER;
     digitalWrite(pumpePin, LOW);
-    Serial.println("Pumpe ausgeschaltet!");
     lcd.setCursor(0, 3);
     lcd.print("Fuellstand zu gering");
+  } 
+  // Pause aktiv
+  else if (pumpenModus == PAUSE) {
+    unsigned long rest = (PAUSE_DAUER - (aktuelleMillis - pauseStartZeit)) / 1000;
+    lcd.setCursor(0, 3);
+    lcd.print("Pause:        ");
+    lcd.print(rest / 3600); lcd.print("h ");
+    lcd.print((rest % 3600) / 60); lcd.print("m");
   }
-// Automatischer Pumpenstart
-  else if (jetzt.hour() == 22 && jetzt.minute() == 0 && jetzt.second() == 0 && !pumpeAn && digitalRead(fuellstand) == HIGH) {// else if (jetzt.minute() % 1 == 0 && jetzt.second() == 0 && !pumpeAn && digitalRead(fuellstand) == HIGH) {  // --- Automatische Pumpe ---
+  // Pumpe läuft (Automatik oder Manuell)
+  else if (pumpeAn) {
+    unsigned long laufzeit = (pumpenModus == AUTO) ? DAUER_AUTO : DAUER_MANUELL;
+    long verbleibend = (laufzeit - (aktuelleMillis - pumpeStartZeit)) / 1000;
+
+    if (verbleibend > 0) {
+      lcd.setCursor(0, 3);
+      lcd.print(pumpenModus == AUTO ? "Auto-Run:        " : "Manu-Run:         ");
+      lcd.print(verbleibend); lcd.print("s");
+    } else {
+      pumpeAn = false;
+      pumpenModus = KEINER;
+      digitalWrite(pumpePin, LOW);
+      lcd.setCursor(0, 3); lcd.print("                    ");
+    }
+  }
+  // Automatik Start-Check
+  else if (jetzt.hour() >= START_STUNDE && jetzt.hour() < ENDE_STUNDE && 
+           jetzt.minute() % INTERVALL_MINUTEN == 0 && jetzt.second() == 0 && 
+           pumpenModus == KEINER) {
     pumpeAn = true;
     pumpenModus = AUTO;
-    pumpeStartZeit = millis();
+    pumpeStartZeit = aktuelleMillis;
     digitalWrite(pumpePin, HIGH);
-    Serial.println("Pumpe automatisch eingeschaltet!");
-    if (pumpeAn){
-      // lcd.clear(); // Löscht alles auf LCD
-      lcd.setCursor(0, 3);
-      lcd.print("Pumpe auto ein!");
-    }
   }
-// Manueller Pumpenstart
-  else if (digitalRead(tasterPin) == HIGH && !pumpeAn && digitalRead(fuellstand) == HIGH) { // --- Manueller Taster ---
-    pumpeAn = true;
-    pumpenModus = MANUELL;
-    pumpeStartZeit = millis();
-    digitalWrite(pumpePin, HIGH);
-    Serial.println("Pumpe manuell eingeschaltet!");
-    if (pumpeAn){
-      // lcd.clear(); // Löscht alles auf LCD
-      lcd.setCursor(0, 3);
-      lcd.print("Pumpe manuell ein!");
-    }
-  }
-// Ausschalten der Pumpe
-  else if (pumpeAn) {
-
-    unsigned long laufzeit;
-
-    // Laufzeit je nach Modus bestimmen
-    if (pumpenModus == AUTO) {
-        laufzeit = 20000; // 20 Sekunden
-    }
-    else if (pumpenModus == MANUELL) {
-        laufzeit = 10000; // 10 Sekunden
-    }
-    else {
-        // Falls aus irgendeinem Grund KEINER, einfach Pumpe aus
-        pumpeAn = false;
-        digitalWrite(pumpePin, LOW);
-        pumpenModus = KEINER;
-        lcd.setCursor(0, 3);
-        lcd.print("                    ");
-        return;
-    }
-
-    // Verbleibende Zeit berechnen
-    long verbleibend_ms = laufzeit - (millis() - pumpeStartZeit);
-
-    if (verbleibend_ms > 0) {
-        int verbleibendSek = verbleibend_ms / 1000;
-
-        // LCD-Ausgabe vorbereiten
-        lcd.setCursor(0, 3); // Zeile 4 (0-index)
-
-        if (pumpenModus == AUTO) {
-            lcd.print("Pumpe auto ein:  ");
-        } else if (pumpenModus == MANUELL) {
-            lcd.print("Pumpe manu ein:  ");
-        }
-
-        // Sekunden ausgeben
-        if (verbleibendSek < 10) {
-          lcd.print("0");   // führende Null
-        }
-        lcd.print(verbleibendSek);
-        lcd.print("s"); // Leerzeichen zum Überschreiben alter Zahlen
-    }
-    else {
-        // Pumpe ausschalten, Modus zurücksetzen
-        pumpeAn = false;
-        pumpenModus = KEINER;
-        digitalWrite(pumpePin, LOW);
-
-        // LCD-Text löschen
-        lcd.setCursor(0, 3);
-        lcd.print("                    ");
-
-        Serial.println("Pumpe ausgeschaltet!");
-    }
-  }
-// Nichts tun
-  else if (!pumpeAn && digitalRead(tasterPin) == LOW &&  digitalRead(fuellstand) == HIGH){
-    lcd.setCursor(0, 3);         
-    lcd.print("                    ");
+  // Standby
+  else {
+    lcd.setCursor(0, 3);
+    lcd.print("Bereit              ");
   }
 
-  
-
-  delay(100);
+  delay(100); 
 }
