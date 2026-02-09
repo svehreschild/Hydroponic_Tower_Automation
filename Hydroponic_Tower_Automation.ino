@@ -134,10 +134,23 @@ void loop() {
   // Pause aktiv
   else if (pumpenModus == PAUSE) {
     unsigned long rest = (PAUSE_DAUER - (aktuelleMillis - pauseStartZeit)) / 1000;
+    int h = rest / 3600;
+    int m = (rest % 3600) / 60;
+
     lcd.setCursor(0, 3);
-    lcd.print("Pause:        ");
-    lcd.print(rest / 3600); lcd.print("h ");
-    lcd.print((rest % 3600) / 60); lcd.print("m");
+    lcd.print("Pause:        "); 
+    
+    lcd.setCursor(13, 3);
+    
+    // Stunden rechtsbündig (2 Stellen)
+    if (h < 10) lcd.print(" "); 
+    lcd.print(h);
+    lcd.print("h ");
+
+    // Minuten mit führender Null (immer 2 Stellen)
+    if (m < 10) lcd.print("0");
+    lcd.print(m);
+    lcd.print("m");
   }
   // Pumpe läuft (Automatik oder Manuell)
   else if (pumpeAn) {
@@ -146,8 +159,18 @@ void loop() {
 
     if (verbleibend > 0) {
       lcd.setCursor(0, 3);
-      lcd.print(pumpenModus == AUTO ? "Auto-Run:        " : "Manu-Run:         ");
-      lcd.print(verbleibend); lcd.print("s");
+      lcd.print(pumpenModus == AUTO ? "Auto-Run: " : "Manu-Run: ");
+      
+      // Cursor auf Spalte 15 setzen (Platz für bis zu 4 Ziffern + 's')
+      lcd.setCursor(15, 3); 
+
+      // Fallunterscheidung für rechtsbündige Ausrichtung
+      if (verbleibend < 10) lcd.print("   ");    // 3 Leerzeichen bei 1 Stelle
+      else if (verbleibend < 100) lcd.print("  "); // 2 Leerzeichen bei 2 Stellen
+      else if (verbleibend < 1000) lcd.print(" "); // 1 Leerzeichen bei 3 Stellen
+      
+      lcd.print(verbleibend);
+      lcd.print("s");
     } else {
       pumpeAn = false;
       pumpenModus = KEINER;
