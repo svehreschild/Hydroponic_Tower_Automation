@@ -1,7 +1,6 @@
 # Hydroponic_Tower_Automation
 Hier finden Sie eine detaillierte Anleitung, um einen modularen Hydroponikturm zu automatisieren. Die Anleitung enthält einen Schaltplan, den Code der Software, eine Liste der benötigten Materialien und eine Schritt-für-Schritt-Anleitung.
 
-TODO: ggf. noch mit Pflanzen erneuern
 ![Bild-Übersicht](pictures/Uebersicht.jpeg)
 
 ## 3D-Druck
@@ -223,20 +222,8 @@ Eine weitere Möglichkeit ist die Anzucht der Pflanzen direkt in den (herausgeno
 Beachten Sie außerdem, dass einige Pflanzen spezielle Anforderungen an die Nährlösungen, den pH-Wert des Wassers und die Lichteinstrahlung haben. Informieren Sie sich daher vorab über die Bedürfnisse der von Ihnen gewünschten Pflanzen, um optimale Wachstumsbedingungen zu gewährleisten.
 
 ----
-*In Kürze wird hier noch ein weiteres Kapitel eingefügt. Es folgt ein kleiner Teaser.*  
+Alternativ können wir empfehlen, die Pflanzen direkt in den Hydroponikturm zu ziehen, indem Sie die Samen in ein kleines Stück feuchter Steinwolle pflanzen, das in die Pods umrandet von Blähton gelegt wird. Auf diese Weise ist die Wahrscheinlichkeit für Wurzelfäule geringer, da die Samen nicht zu nass liegen.
 
-Aktuell testen wir eine weitere Methode, um Pflanzen mit ausgeprägten Wasserwurzeln heranzuziehen. Dafür werden die Pflanzen bereits sehr früh beinahe vollständig mit den Wurzeln in ein Wassergefäß gesetzt, um sie dann nach einer Weile in den Turm umzusetzen.
-
-Zunächst werden die Samen in einer entsprechenden Anzuchtschale mit einem sehr kleinen Steinwollwürfel angezogen.
-![Steinwollwürfel in Anzuchtschale](pictures/Samen_in_Anzuchtschale.jpeg)
-
-Die Anzuchtschale wird mit einer durchsichtigen Haube abgedeckt, um eine hohe Luftfeuchtigkeit zu gewährleisten. Über einen Schlitz in der Haube kann die Luftzirkulation reguliert werden.
-
-Zu beachten ist auch an dieser Stelle, dass die Samen je nach Pflanzenart unterschiedliche Anforderungen an Licht und Temperatur haben. Informieren Sie sich daher vorab über die Bedürfnisse der von Ihnen gewünschten Pflanzen, um optimale Wachstumsbedingungen zu gewährleisten.
-
-Nachdem die Pflanzen gekeimt sind und die Wurzeln eine gewisse Länge erreicht haben, wird die Steinwolle hälftig aufgeschnitten und die Pflanze mitsamt der Wurzeln so in die Steinwolle gesetzt, dass die Wurzeln in das Wassergefäß hineinragen. Nun ...
-
-----
 
 
 ## Inbetriebnahme
